@@ -15,9 +15,15 @@ fn main() {
     //let secret_number = (nanonow%100).to_string();
     let secret_number = (nanonow%100).to_string();
 
-    println!("secret is {secret_number}");
+    //println!("secret is {secret_number}");
+
+    let mut attempts = 10;
 
     loop {
+        if attempts == 0{
+            break;
+        }
+        attempts -= 1;
         std::io::stdin()
             .read_line(&mut guess)
             .expect("Failed to read line");
@@ -25,7 +31,7 @@ fn main() {
         println!("You guessed: {guess}");
 
         match guess.trim().cmp(&secret_number) {
-            Ordering::Equal => println!("got it!!"),
+            Ordering::Equal => break println!("got it!"),
             Ordering::Less => println!("too smol >~<"),
             Ordering::Greater => println!("too lorge @-@"),
         }
