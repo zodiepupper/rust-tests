@@ -1,2 +1,12 @@
 .DS_Store
 */target
+
+guitesting/target/
+
+hello-cargo/target/
+
+networkstuff/target/
+
+rmlui-rust/target/
+
+

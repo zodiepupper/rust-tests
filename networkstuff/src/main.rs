@@ -22,6 +22,7 @@ fn handle_connection(mut stream: TcpStream) {
         .take_while(|line| !line.is_empty())
         .collect();
     //println!("{}", http_request[0]);
-    println!("{}", http_request[0].split(' ').collect::str());
+    println!("{}", http_request[0].split(' ').collect::<String>());
+    //let test = http_request[0].split(' ').collect::<String>();
     //println!("Request: {http_request:#?}");
 }
